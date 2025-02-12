@@ -1,0 +1,60 @@
+using System;
+
+class Rectangle
+{
+    public double hight {  get; set; }
+    public double wight { get; set; }
+
+
+    public Rectangle()
+    {
+        hight = 10;
+        wight = 15;
+        Console.WriteLine("Конструктор по умолчанию вызван");
+    }
+
+    public Rectangle(double hight, double wight)
+    {
+        hight = hight;
+        wight = wight;
+        Console.WriteLine("Конструктор с параметрами вызван");
+    }
+
+    public Rectangle(Rectangle other)
+    {
+        hight = other.hight;
+        wight = other.wight;
+    }
+
+    public double S()
+    {
+        return wight * hight;
+    }
+
+    public double P()
+    {
+        return 2 * (wight + hight);
+    }
+
+    ~Rectangle()
+    {
+        Console.WriteLine($"Деструктор вызван");
+    }
+
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Rectangle rec1 = new Rectangle();
+        Console.WriteLine($"Ширина:{rec1.wight} Длина:{rec1.hight} Площадь: {rec1.S()}, Периметр: {rec1.P()}");
+
+        Rectangle rec2 = new Rectangle(2, 14);
+        Console.WriteLine($"Ширина:{rec2.wight} Длина:{rec2.hight} Площадь: {rec2.S()}, Периметр: {rec2.P()}");
+
+        Rectangle rec3 = new Rectangle(rec2);
+        Console.WriteLine($"Ширина:{rec3.wight} Длина:{rec3.hight} Площадь: {rec3.S()}, Периметр: {rec3.P()}");
+
+    }
+}
