@@ -1,8 +1,6 @@
-using System;
-
 class Rectangle
 {
-    public double hight {  get; set; }
+    public double hight { get; set; }
     public double wight { get; set; }
 
 
@@ -13,10 +11,10 @@ class Rectangle
         Console.WriteLine("Конструктор по умолчанию вызван");
     }
 
-    public Rectangle(double hight, double wight)
+    public Rectangle(double Hight, double Wight)
     {
-        hight = hight;
-        wight = wight;
+        hight = Hight;
+        wight = Wight;
         Console.WriteLine("Конструктор с параметрами вызван");
     }
 
